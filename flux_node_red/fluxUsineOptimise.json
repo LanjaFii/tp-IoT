@@ -1,0 +1,1308 @@
+[
+    {
+        "id": "73a689065fe1bb03",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "02b62f8f75a64c4f",
+        "type": "mqtt-broker",
+        "name": "Mosquitto-connexion",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9318b460900182c4",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "1ebe67938057cecd",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "4ed07f9e16e9b376",
+        "type": "ui-page",
+        "name": "Page de statisiques",
+        "ui": "9318b460900182c4",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "1ebe67938057cecd",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "7995d5b8d2af0504",
+        "type": "ui-group",
+        "name": "Groupage",
+        "page": "4ed07f9e16e9b376",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "86eee1d5677c25cb",
+        "type": "ui-page",
+        "name": "Usines",
+        "ui": "9318b460900182c4",
+        "path": "/usines",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "1ebe67938057cecd",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "612ff79d3253bdae",
+        "type": "ui-group",
+        "name": "Machine 1",
+        "page": "86eee1d5677c25cb",
+        "width": "12",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "8b4c8c22c2e85016",
+        "type": "ui-group",
+        "name": "Machine 2",
+        "page": "86eee1d5677c25cb",
+        "width": "13",
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "01d42437558733e1",
+        "type": "ui-group",
+        "name": "Machine 3",
+        "page": "86eee1d5677c25cb",
+        "width": "12",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "019d537524e842b1",
+        "type": "mqtt in",
+        "z": "73a689065fe1bb03",
+        "name": "",
+        "topic": "maison/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "02b62f8f75a64c4f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "5ab81432bfa539b4"
+            ]
+        ]
+    },
+    {
+        "id": "1e0ff57cf586f8a1",
+        "type": "debug",
+        "z": "73a689065fe1bb03",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5ab81432bfa539b4",
+        "type": "function",
+        "z": "73a689065fe1bb03",
+        "name": "function 1",
+        "func": "let temp = parseFloat(msg.payload);\n\n// Pour le debug, tu peux créer un autre msg pour la console\nmsg.alert = temp > 30 ? \"⚠️ ALERTE température: \" + temp : \"Température normale: \" + temp;\n\n// msg.payload reste le nombre pour la Gauge\nmsg.payload = temp;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "1e0ff57cf586f8a1",
+                "68d73767befece46"
+            ]
+        ]
+    },
+    {
+        "id": "68d73767befece46",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Température",
+        "group": "7995d5b8d2af0504",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d733876077d454e",
+        "type": "mqtt in",
+        "z": "73a689065fe1bb03",
+        "name": "",
+        "topic": "machine/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "02b62f8f75a64c4f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "fccf044c543f43a5"
+            ]
+        ]
+    },
+    {
+        "id": "fccf044c543f43a5",
+        "type": "function",
+        "z": "73a689065fe1bb03",
+        "name": "function 3",
+        "func": "let data = msg.payload;\n\n// machine ID\nmsg.machine = msg.topic.split(\"/\")[1];\n\n// alertes\nlet alerts = [];\n\nif(data.temperature > 30) alerts.push(\"Température élevée\");\nif(data.humidity > 65) alerts.push(\"Humidité élevée\");\nif(data.vibration > 7) alerts.push(\"Vibration critique\");\nif(data.flamme) alerts.push(\"🔥 Flamme détectée !\");\nif(data.fumee) alerts.push(\"💨 Fumée détectée !\");\n\nmsg.alerts = alerts.length ? alerts.join(\", \") : \"OK\";\n\n// envoyer données directes\nmsg.temperature = data.temperature;\nmsg.humidity = data.humidity;\nmsg.vibration = data.vibration;\nmsg.flamme = data.flamme;\nmsg.fumee = data.fumee;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 360,
+        "wires": [
+            [
+                "ee593991d1d416cc",
+                "52c70256202f6097"
+            ]
+        ]
+    },
+    {
+        "id": "ee593991d1d416cc",
+        "type": "debug",
+        "z": "73a689065fe1bb03",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "52c70256202f6097",
+        "type": "switch",
+        "z": "73a689065fe1bb03",
+        "name": "",
+        "property": "machine",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 580,
+        "y": 460,
+        "wires": [
+            [
+                "bca0407ceda2fea4",
+                "e672782f1f30b61d",
+                "ce2919466df0470f",
+                "1afcef4d5e2c9855",
+                "8d54bc729350252b",
+                "52383c63f8265fe2"
+            ],
+            [
+                "cc40b4441e09392d",
+                "53f6e4ad30ea1d20",
+                "1798b7257f0eaf17",
+                "37fc9be4761fbfb3",
+                "cfd4a41a40c9c8ee",
+                "f378425a70b9820f"
+            ],
+            [
+                "f4bd861aea11133b",
+                "1cfccea9d87d43e4",
+                "08614d01352a523d",
+                "1dd2a5b7bb1a20e0",
+                "7729b73181d6b073",
+                "cabafe0639c0a896"
+            ]
+        ]
+    },
+    {
+        "id": "cc40b4441e09392d",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Temperature",
+        "group": "8b4c8c22c2e85016",
+        "order": 1,
+        "value": "temperature",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Température",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "degré",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 690,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bca0407ceda2fea4",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Temperature",
+        "group": "612ff79d3253bdae",
+        "order": 1,
+        "value": "temperature",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Température",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "dergre",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 330,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4bd861aea11133b",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Temperature",
+        "group": "01d42437558733e1",
+        "order": 1,
+        "value": "temperature",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Température",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "dergre",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1030,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53f6e4ad30ea1d20",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Humidité",
+        "group": "8b4c8c22c2e85016",
+        "order": 2,
+        "value": "humidity",
+        "valueType": "msg",
+        "width": "2",
+        "height": "2",
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Humidity",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#55dbec",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#53b4fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 680,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1cfccea9d87d43e4",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Humidité",
+        "group": "01d42437558733e1",
+        "order": 2,
+        "value": "humidity",
+        "valueType": "msg",
+        "width": "2",
+        "height": "2",
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Humidity",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#55dbec",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#53b4fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1020,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e672782f1f30b61d",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Humidité",
+        "group": "612ff79d3253bdae",
+        "order": 5,
+        "value": "humidity",
+        "valueType": "msg",
+        "width": "2",
+        "height": "2",
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Humidity",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#55dbec",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#53b4fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 320,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1798b7257f0eaf17",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Vibration",
+        "group": "8b4c8c22c2e85016",
+        "order": 3,
+        "value": "vibration",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Vibration",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 680,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08614d01352a523d",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Vibration",
+        "group": "01d42437558733e1",
+        "order": 5,
+        "value": "vibration",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Vibration",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1020,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce2919466df0470f",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Vibration",
+        "group": "612ff79d3253bdae",
+        "order": 4,
+        "value": "vibration",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Vibration",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 320,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37fc9be4761fbfb3",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Flamme",
+        "group": "8b4c8c22c2e85016",
+        "order": 4,
+        "value": "flamme",
+        "valueType": "msg",
+        "width": "2",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Flamme",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ddfbff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1",
+                "color": "#cc1c20",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 680,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1dd2a5b7bb1a20e0",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Flamme",
+        "group": "01d42437558733e1",
+        "order": 4,
+        "value": "flamme",
+        "valueType": "msg",
+        "width": "2",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Flamme",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ddfbff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1",
+                "color": "#cc1c20",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1020,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1afcef4d5e2c9855",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Flamme",
+        "group": "612ff79d3253bdae",
+        "order": 3,
+        "value": "flamme",
+        "valueType": "msg",
+        "width": "2",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Flamme",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ddfbff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1",
+                "color": "#cc1c20",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 320,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cfd4a41a40c9c8ee",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Fumée",
+        "group": "8b4c8c22c2e85016",
+        "order": 5,
+        "value": "fumee",
+        "valueType": "msg",
+        "width": "2",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Fumée",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#9ce79c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1",
+                "color": "#6a6a6a",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 680,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7729b73181d6b073",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Fumée",
+        "group": "01d42437558733e1",
+        "order": 3,
+        "value": "fumee",
+        "valueType": "msg",
+        "width": "2",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Fumée",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#9ce79c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1",
+                "color": "#6a6a6a",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1020,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d54bc729350252b",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Fumée",
+        "group": "612ff79d3253bdae",
+        "order": 2,
+        "value": "fumee",
+        "valueType": "msg",
+        "width": "2",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Fumée",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#9ce79c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1",
+                "color": "#6a6a6a",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 320,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52383c63f8265fe2",
+        "type": "ui-template",
+        "z": "73a689065fe1bb03",
+        "group": "612ff79d3253bdae",
+        "page": "",
+        "ui": "",
+        "name": "Temperax",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div class=\"gauge-card\">\n    <div class=\"card-title\">Température Machine</div>\n\n    <div class=\"gauge-container\">\n      <div class=\"gauge\"></div>\n    </div>\n\n    <div class=\"status-box\" :class=\"{alert: currentTemp > 35}\">\n      <span class=\"status-dot\"></span>\n      {{ currentTemp > 35 ? \"Surchauffe\" : \"Normal\" }}\n    </div>\n  </div>\n</template>\n\n<script>\n  export default {\n    data() {\n        return {\n            chart: null,\n            currentTemp: 0\n        }\n    },\n\n    watch: {\n        msg: function(newMsg){\n\n            if(!newMsg) return;\n\n            if(newMsg.temperature !== undefined){\n\n                this.currentTemp = parseFloat(newMsg.temperature);\n\n                this.updateGauge();\n\n            }\n\n        }\n    },\n\n    methods: {\n\n        updateGauge(){\n\n            if(!this.chart) return;\n\n            let color = \"#00E396\"; // vert\n\n            if(this.currentTemp > 30) color = \"#FEB019\"; // orange\n            if(this.currentTemp > 35) color = \"#FF4560\"; // rouge\n\n            this.chart.updateOptions({\n                series: [this.currentTemp],\n                colors: [color]\n            });\n\n        },\n\n        initChart(){\n\n            const options = {\n\n                chart:{\n                    type:\"radialBar\",\n                    height:260,\n                    animations:{\n                        enabled:true,\n                        easing:\"easeinout\",\n                        speed:700\n                    }\n                },\n\n                series:[0],\n\n                labels:[\"Température\"],\n\n                colors:[\"#00E396\"],\n\n                plotOptions:{\n                    radialBar:{\n                        startAngle:-135,\n                        endAngle:135,\n\n                        hollow:{\n                            size:\"65%\"\n                        },\n\n                        track:{\n                            background:\"#1e1e1e\",\n                            strokeWidth:\"100%\"\n                        },\n\n                        dataLabels:{\n                            name:{\n                                color:\"#888\",\n                                fontSize:\"13px\",\n                                offsetY:-10\n                            },\n\n                            value:{\n                                color:\"#fff\",\n                                fontSize:\"26px\",\n                                offsetY:10,\n                                formatter:(val)=>{\n                                    return val.toFixed(1)+\" °C\"\n                                }\n                            }\n                        }\n                    }\n                },\n\n                stroke:{\n                    lineCap:\"round\"\n                }\n\n            };\n\n            const container = this.$el.querySelector(\".gauge\");\n\n            this.chart = new ApexCharts(container, options);\n\n            this.chart.render();\n\n        }\n\n    },\n\n    mounted(){\n\n        if(!window.ApexCharts){\n\n            const script = document.createElement(\"script\");\n\n            script.src = \"https://cdn.jsdelivr.net/npm/apexcharts\";\n\n            script.onload = () => this.initChart();\n\n            document.head.appendChild(script);\n\n        } else {\n\n            this.initChart();\n\n        }\n\n    },\n\n    unmounted(){\n\n        if(this.chart){\n            this.chart.destroy();\n        }\n\n    }\n}\n</script>\n\n<style>\n  .gauge-card {\n    background: #151515;\n    border-radius: 12px;\n    padding: 15px;\n    text-align: center;\n    border: 1px solid #222;\n  }\n\n  .card-title {\n    color: #00E396;\n    font-weight: bold;\n    text-transform: uppercase;\n    font-size: 0.8rem;\n    letter-spacing: 1px;\n  }\n\n  .gauge-container {\n    height: 260px;\n  }\n\n  .status-box {\n    margin-top: -25px;\n    font-size: 0.8rem;\n    color: #00E396;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px;\n  }\n\n  .status-dot {\n    width: 8px;\n    height: 8px;\n    background: #00E396;\n    border-radius: 50%;\n  }\n\n  .alert {\n    color: #FF4560 !important;\n  }\n\n  .alert .status-dot {\n    background: #FF4560 !important;\n    box-shadow: 0 0 8px #FF4560;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1120,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f378425a70b9820f",
+        "type": "ui-template",
+        "z": "73a689065fe1bb03",
+        "group": "8b4c8c22c2e85016",
+        "page": "",
+        "ui": "",
+        "name": "Temperax",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div class=\"gauge-card\">\n    <div class=\"card-title\">Température Machine</div>\n\n    <div class=\"gauge-container\">\n      <div class=\"gauge\"></div>\n    </div>\n\n    <div class=\"status-box\" :class=\"{alert: currentTemp > 35}\">\n      <span class=\"status-dot\"></span>\n      {{ currentTemp > 35 ? \"Surchauffe\" : \"Normal\" }}\n    </div>\n  </div>\n</template>\n\n<script>\n  export default {\n    data() {\n        return {\n            chart: null,\n            currentTemp: 0\n        }\n    },\n\n    watch: {\n        msg: function(newMsg){\n\n            if(!newMsg) return;\n\n            if(newMsg.temperature !== undefined){\n\n                this.currentTemp = parseFloat(newMsg.temperature);\n\n                this.updateGauge();\n\n            }\n\n        }\n    },\n\n    methods: {\n\n        updateGauge(){\n\n            if(!this.chart) return;\n\n            let color = \"#00E396\"; // vert\n\n            if(this.currentTemp > 30) color = \"#FEB019\"; // orange\n            if(this.currentTemp > 35) color = \"#FF4560\"; // rouge\n\n            this.chart.updateOptions({\n                series: [this.currentTemp],\n                colors: [color]\n            });\n\n        },\n\n        initChart(){\n\n            const options = {\n\n                chart:{\n                    type:\"radialBar\",\n                    height:260,\n                    animations:{\n                        enabled:true,\n                        easing:\"easeinout\",\n                        speed:700\n                    }\n                },\n\n                series:[0],\n\n                labels:[\"Température\"],\n\n                colors:[\"#00E396\"],\n\n                plotOptions:{\n                    radialBar:{\n                        startAngle:-135,\n                        endAngle:135,\n\n                        hollow:{\n                            size:\"65%\"\n                        },\n\n                        track:{\n                            background:\"#1e1e1e\",\n                            strokeWidth:\"100%\"\n                        },\n\n                        dataLabels:{\n                            name:{\n                                color:\"#888\",\n                                fontSize:\"13px\",\n                                offsetY:-10\n                            },\n\n                            value:{\n                                color:\"#fff\",\n                                fontSize:\"26px\",\n                                offsetY:10,\n                                formatter:(val)=>{\n                                    return val.toFixed(1)+\" °C\"\n                                }\n                            }\n                        }\n                    }\n                },\n\n                stroke:{\n                    lineCap:\"round\"\n                }\n\n            };\n\n            const container = this.$el.querySelector(\".gauge\");\n\n            this.chart = new ApexCharts(container, options);\n\n            this.chart.render();\n\n        }\n\n    },\n\n    mounted(){\n\n        if(!window.ApexCharts){\n\n            const script = document.createElement(\"script\");\n\n            script.src = \"https://cdn.jsdelivr.net/npm/apexcharts\";\n\n            script.onload = () => this.initChart();\n\n            document.head.appendChild(script);\n\n        } else {\n\n            this.initChart();\n\n        }\n\n    },\n\n    unmounted(){\n\n        if(this.chart){\n            this.chart.destroy();\n        }\n\n    }\n}\n</script>\n\n<style>\n  .gauge-card {\n    background: #151515;\n    border-radius: 12px;\n    padding: 15px;\n    text-align: center;\n    border: 1px solid #222;\n  }\n\n  .card-title {\n    color: #00E396;\n    font-weight: bold;\n    text-transform: uppercase;\n    font-size: 0.8rem;\n    letter-spacing: 1px;\n  }\n\n  .gauge-container {\n    height: 260px;\n  }\n\n  .status-box {\n    margin-top: -25px;\n    font-size: 0.8rem;\n    color: #00E396;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px;\n  }\n\n  .status-dot {\n    width: 8px;\n    height: 8px;\n    background: #00E396;\n    border-radius: 50%;\n  }\n\n  .alert {\n    color: #FF4560 !important;\n  }\n\n  .alert .status-dot {\n    background: #FF4560 !important;\n    box-shadow: 0 0 8px #FF4560;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1020,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cabafe0639c0a896",
+        "type": "ui-template",
+        "z": "73a689065fe1bb03",
+        "group": "01d42437558733e1",
+        "page": "",
+        "ui": "",
+        "name": "Temperax",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div class=\"gauge-card\">\n    <div class=\"card-title\">Température Machine</div>\n\n    <div class=\"gauge-container\">\n      <div class=\"gauge\"></div>\n    </div>\n\n    <div class=\"status-box\" :class=\"{alert: currentTemp > 35}\">\n      <span class=\"status-dot\"></span>\n      {{ currentTemp > 35 ? \"Surchauffe\" : \"Normal\" }}\n    </div>\n  </div>\n</template>\n\n<script>\n  export default {\n    data() {\n        return {\n            chart: null,\n            currentTemp: 0\n        }\n    },\n\n    watch: {\n        msg: function(newMsg){\n\n            if(!newMsg) return;\n\n            if(newMsg.temperature !== undefined){\n\n                this.currentTemp = parseFloat(newMsg.temperature);\n\n                this.updateGauge();\n\n            }\n\n        }\n    },\n\n    methods: {\n\n        updateGauge(){\n\n            if(!this.chart) return;\n\n            let color = \"#00E396\"; // vert\n\n            if(this.currentTemp > 30) color = \"#FEB019\"; // orange\n            if(this.currentTemp > 35) color = \"#FF4560\"; // rouge\n\n            this.chart.updateOptions({\n                series: [this.currentTemp],\n                colors: [color]\n            });\n\n        },\n\n        initChart(){\n\n            const options = {\n\n                chart:{\n                    type:\"radialBar\",\n                    height:260,\n                    animations:{\n                        enabled:true,\n                        easing:\"easeinout\",\n                        speed:700\n                    }\n                },\n\n                series:[0],\n\n                labels:[\"Température\"],\n\n                colors:[\"#00E396\"],\n\n                plotOptions:{\n                    radialBar:{\n                        startAngle:-135,\n                        endAngle:135,\n\n                        hollow:{\n                            size:\"65%\"\n                        },\n\n                        track:{\n                            background:\"#1e1e1e\",\n                            strokeWidth:\"100%\"\n                        },\n\n                        dataLabels:{\n                            name:{\n                                color:\"#888\",\n                                fontSize:\"13px\",\n                                offsetY:-10\n                            },\n\n                            value:{\n                                color:\"#fff\",\n                                fontSize:\"26px\",\n                                offsetY:10,\n                                formatter:(val)=>{\n                                    return val.toFixed(1)+\" °C\"\n                                }\n                            }\n                        }\n                    }\n                },\n\n                stroke:{\n                    lineCap:\"round\"\n                }\n\n            };\n\n            const container = this.$el.querySelector(\".gauge\");\n\n            this.chart = new ApexCharts(container, options);\n\n            this.chart.render();\n\n        }\n\n    },\n\n    mounted(){\n\n        if(!window.ApexCharts){\n\n            const script = document.createElement(\"script\");\n\n            script.src = \"https://cdn.jsdelivr.net/npm/apexcharts\";\n\n            script.onload = () => this.initChart();\n\n            document.head.appendChild(script);\n\n        } else {\n\n            this.initChart();\n\n        }\n\n    },\n\n    unmounted(){\n\n        if(this.chart){\n            this.chart.destroy();\n        }\n\n    }\n}\n</script>\n\n<style>\n  .gauge-card {\n    background: #151515;\n    border-radius: 12px;\n    padding: 15px;\n    text-align: center;\n    border: 1px solid #222;\n  }\n\n  .card-title {\n    color: #00E396;\n    font-weight: bold;\n    text-transform: uppercase;\n    font-size: 0.8rem;\n    letter-spacing: 1px;\n  }\n\n  .gauge-container {\n    height: 260px;\n  }\n\n  .status-box {\n    margin-top: -25px;\n    font-size: 0.8rem;\n    color: #00E396;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px;\n  }\n\n  .status-dot {\n    width: 8px;\n    height: 8px;\n    background: #00E396;\n    border-radius: 50%;\n  }\n\n  .alert {\n    color: #FF4560 !important;\n  }\n\n  .alert .status-dot {\n    background: #FF4560 !important;\n    box-shadow: 0 0 8px #FF4560;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c207e1ce2f9966c",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
