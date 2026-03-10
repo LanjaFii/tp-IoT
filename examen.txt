@@ -5,3 +5,14 @@ Generer des alertes en cas de depassement de surveiller
 
 Visualiser les données sur un dashboard 
 Stocker les mesurer pour analyse ultérieur
+
+
+
+Essaye de mettre les 3 gauges à gauche (retraicit leus tailles), les tableaux oranges (qui sont très très beaux comme ça avec les icones qui vibrent c'est cool, garde ça) à droite (flemme en haut et fumée en bas) et puis le courbe qui prend toute la largeur en bas de ces deux sections. Les courbes devrait etre affichés en pourcentage avec max 100. Et les gauges aussi doivent etre ajustés par rapport à leurs seuil de valeur (max 50 pour temperature, max 100 pour humidité, max 10 pour vibration) et met les mesures à la place des pourcentages dans les gauges, voici les plages de valeur:
+const data = {
+                temperature: +(20 + Math.random() * 15).toFixed(2), // 20-35°C (maximum 50 deg)
+                humidity: +(40 + Math.random() * 30).toFixed(2),    // 40-70% (maximum 100%)
+                vibration: +(Math.random() * 10).toFixed(2),       // 0-10 (maximum 10)
+                flamme: Math.random() > 0.95 ? 1 : 0,             // 5% de chance
+                fumee: Math.random() > 0.9 ? 1 : 0                // 10% de chance
+            };

@@ -1,0 +1,501 @@
+[
+    {
+        "id": "73a689065fe1bb03",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "02b62f8f75a64c4f",
+        "type": "mqtt-broker",
+        "name": "Mosquitto-connexion",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9318b460900182c4",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "1ebe67938057cecd",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "4ed07f9e16e9b376",
+        "type": "ui-page",
+        "name": "Page de statisiques",
+        "ui": "9318b460900182c4",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "1ebe67938057cecd",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "7995d5b8d2af0504",
+        "type": "ui-group",
+        "name": "Groupage",
+        "page": "4ed07f9e16e9b376",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "86eee1d5677c25cb",
+        "type": "ui-page",
+        "name": "Usines",
+        "ui": "9318b460900182c4",
+        "path": "/usines",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "1ebe67938057cecd",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "612ff79d3253bdae",
+        "type": "ui-group",
+        "name": "Machine 1",
+        "page": "86eee1d5677c25cb",
+        "width": "4",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "8b4c8c22c2e85016",
+        "type": "ui-group",
+        "name": "Machine 2",
+        "page": "86eee1d5677c25cb",
+        "width": "4",
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "01d42437558733e1",
+        "type": "ui-group",
+        "name": "Machine 3",
+        "page": "86eee1d5677c25cb",
+        "width": "4",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "019d537524e842b1",
+        "type": "mqtt in",
+        "z": "73a689065fe1bb03",
+        "name": "",
+        "topic": "maison/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "02b62f8f75a64c4f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "5ab81432bfa539b4"
+            ]
+        ]
+    },
+    {
+        "id": "1e0ff57cf586f8a1",
+        "type": "debug",
+        "z": "73a689065fe1bb03",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5ab81432bfa539b4",
+        "type": "function",
+        "z": "73a689065fe1bb03",
+        "name": "function 1",
+        "func": "let temp = parseFloat(msg.payload);\n\n// Pour le debug, tu peux créer un autre msg pour la console\nmsg.alert = temp > 30 ? \"⚠️ ALERTE température: \" + temp : \"Température normale: \" + temp;\n\n// msg.payload reste le nombre pour la Gauge\nmsg.payload = temp;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "1e0ff57cf586f8a1",
+                "68d73767befece46"
+            ]
+        ]
+    },
+    {
+        "id": "68d73767befece46",
+        "type": "ui-gauge",
+        "z": "73a689065fe1bb03",
+        "name": "Température",
+        "group": "7995d5b8d2af0504",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d733876077d454e",
+        "type": "mqtt in",
+        "z": "73a689065fe1bb03",
+        "name": "",
+        "topic": "machine/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "02b62f8f75a64c4f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "fccf044c543f43a5"
+            ]
+        ]
+    },
+    {
+        "id": "fccf044c543f43a5",
+        "type": "function",
+        "z": "73a689065fe1bb03",
+        "name": "function 3",
+        "func": "let data = msg.payload;\n\n// machine ID\nmsg.machine = msg.topic.split(\"/\")[1];\n\n// alertes\nlet alerts = [];\n\nif(data.temperature > 30) alerts.push(\"Température élevée\");\nif(data.humidity > 65) alerts.push(\"Humidité élevée\");\nif(data.vibration > 7) alerts.push(\"Vibration critique\");\nif(data.flamme) alerts.push(\"🔥 Flamme détectée !\");\nif(data.fumee) alerts.push(\"💨 Fumée détectée !\");\n\nmsg.alerts = alerts.length ? alerts.join(\", \") : \"OK\";\n\n// envoyer données directes\nmsg.temperature = data.temperature;\nmsg.humidity = data.humidity;\nmsg.vibration = data.vibration;\nmsg.flamme = data.flamme;\nmsg.fumee = data.fumee;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 360,
+        "wires": [
+            [
+                "ee593991d1d416cc",
+                "52c70256202f6097"
+            ]
+        ]
+    },
+    {
+        "id": "ee593991d1d416cc",
+        "type": "debug",
+        "z": "73a689065fe1bb03",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "52c70256202f6097",
+        "type": "switch",
+        "z": "73a689065fe1bb03",
+        "name": "Switch Machine",
+        "property": "machine",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 600,
+        "y": 460,
+        "wires": [
+            [
+                "52383c63f8265fe2"
+            ],
+            [
+                "f378425a70b9820f"
+            ],
+            [
+                "cabafe0639c0a896"
+            ]
+        ]
+    },
+    {
+        "id": "52383c63f8265fe2",
+        "type": "ui-template",
+        "z": "73a689065fe1bb03",
+        "group": "612ff79d3253bdae",
+        "page": "",
+        "ui": "",
+        "name": "Temperax",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div class=\"industrial-dashboard\">\n        <div class=\"panel header-panel\">\n            <div class=\"machine-info\">\n                <div class=\"glitch-box\">\n                    <span class=\"value active\">MACHINE_{{ machineId }}</span>\n                </div>\n            </div>\n            <div class=\"global-status-container\">\n                <div class=\"status-led\" :class=\"{ 'led-alert': alerts !== 'OK' }\"></div>\n                <div class=\"global-status-text\">{{ alerts }}</div>\n            </div>\n        </div>\n\n        <div class=\"dashboard-grid\">\n            <div class=\"panel gauge-section\">\n                <div class=\"panel-header\">TÉLÉMÉTRIE TEMPS RÉEL</div>\n                <div class=\"gauge-grid\">\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartTemp_' + machineId\"></div>\n                        <div class=\"gauge-info\">TEMPÉRATURE</div>\n                    </div>\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartHum_' + machineId\"></div>\n                        <div class=\"gauge-info\">HUMIDITÉ</div>\n                    </div>\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartVib_' + machineId\"></div>\n                        <div class=\"gauge-info\">VIBRATION</div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"panel trend-section\">\n                <div class=\"panel-header\">ANALYSE DES TENDANCES (30 PTS)</div>\n                <div :id=\"'chartHistory_' + machineId\"></div>\n            </div>\n\n            <div class=\"alerts-row\">\n                <div class=\"psr-lcd fire\" :class=\"{ active: flamme }\">\n                    <div class=\"lcd-scanlines\"></div>\n                    <div class=\"lcd-content\">\n                        <div class=\"lcd-icon\">🔥</div>\n                        <div class=\"lcd-text\">\n                            <span class=\"lcd-title\">FLAME SENSOR</span>\n                            <span class=\"lcd-val\">{{ flamme ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"psr-lcd smoke\" :class=\"{ active: fumee }\">\n                    <div class=\"lcd-scanlines\"></div>\n                    <div class=\"lcd-content\">\n                        <div class=\"lcd-icon\">💨</div>\n                        <div class=\"lcd-text\">\n                            <span class=\"lcd-title\">SMOKE SENSOR</span>\n                            <span class=\"lcd-val\">{{ fumee ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script>\nexport default {\n    data() {\n        return {\n            machineId: \"1\",\n            colors: { temp: '#FEB019', hum: '#00E396', vib: '#FF4560' },\n            charts: { temp: null, hum: null, vib: null, history: null },\n            temperature: 0, humidity: 0, vibration: 0,\n            flamme: false, fumee: false, alerts: \"OK\",\n            historyData: { temp: [], hum: [], vib: [], times: [] },\n            MAX_POINTS: 30\n        }\n    },\n    watch: {\n        msg: function(m) {\n            if (!m || String(m.machine) !== String(this.machineId)) return;\n            \n            this.temperature = parseFloat(m.temperature) || 0;\n            this.humidity = parseFloat(m.humidity) || 0;\n            this.vibration = parseFloat(m.vibration) || 0;\n            this.flamme = !!m.flamme;\n            this.fumee = !!m.fumee;\n            this.alerts = m.alerts || \"OK\";\n\n            this.syncUI();\n        }\n    },\n    methods: {\n        syncUI() {\n            // Conversion en pourcentage pour le remplissage visuel de la jauge\n            // (Valeur / Max) * 100\n            if (this.charts.temp) this.charts.temp.updateSeries([(this.temperature / 50) * 100]);\n            if (this.charts.hum) this.charts.hum.updateSeries([this.humidity]);\n            if (this.charts.vib) this.charts.vib.updateSeries([(this.vibration / 10) * 100]);\n            \n            const now = new Date().toLocaleTimeString();\n            this.historyData.temp.push(this.temperature);\n            this.historyData.hum.push(this.humidity);\n            this.historyData.vib.push(this.vibration);\n            this.historyData.times.push(now);\n\n            if (this.historyData.temp.length > this.MAX_POINTS) {\n                this.historyData.temp.shift(); this.historyData.hum.shift();\n                this.historyData.vib.shift(); this.historyData.times.shift();\n            }\n\n            if (this.charts.history) {\n                this.charts.history.updateSeries([\n                    { name: 'Temp', data: this.historyData.temp },\n                    { name: 'Humid', data: this.historyData.hum },\n                    { name: 'Vibra', data: this.historyData.vib }\n                ]);\n            }\n        },\n        getGaugeConfig(color, max, unit) {\n            return {\n                chart: { type: 'radialBar', height: 180, sparkline: { enabled: true } },\n                series: [0],\n                colors: [color],\n                plotOptions: {\n                    radialBar: {\n                        startAngle: -110, endAngle: 110,\n                        hollow: { size: '60%' },\n                        track: { background: '#1a1a1a', strokeWidth: '95%' },\n                        dataLabels: {\n                            name: { show: false },\n                            value: { \n                                offsetY: 5, \n                                fontSize: '14px', \n                                fontWeight: 'bold', \n                                color: '#fff', \n                                // Calcul pour ré-afficher la valeur exacte à partir du pourcentage\n                                formatter: (v) => ((v / 100) * max).toFixed(1) + unit \n                            }\n                        }\n                    }\n                },\n                stroke: { lineCap: 'butt', dashArray: 2 }\n            };\n        },\n        init() {\n            this.charts.temp = new ApexCharts(document.querySelector(\"#chartTemp_\" + this.machineId), this.getGaugeConfig(this.colors.temp, 50, '°'));\n            this.charts.hum = new ApexCharts(document.querySelector(\"#chartHum_\" + this.machineId), this.getGaugeConfig(this.colors.hum, 100, '%'));\n            this.charts.vib = new ApexCharts(document.querySelector(\"#chartVib_\" + this.machineId), this.getGaugeConfig(this.colors.vib, 10, ''));\n\n            const histCfg = {\n                chart: { type: 'area', height: 140, toolbar: { show: false }, animations: { enabled: false } },\n                colors: [this.colors.temp, this.colors.hum, this.colors.vib],\n                dataLabels: { enabled: false },\n                stroke: { curve: 'smooth', width: 2 },\n                fill: { type: 'gradient', gradient: { opacityFrom: 0.3, opacityTo: 0 } },\n                series: [{ name: 'T°', data: [] }, { name: 'H%', data: [] }, { name: 'Vib', data: [] }],\n                xaxis: { labels: { show: false }, axisBorder: { show: false } },\n                yaxis: { labels: { show: false } },\n                grid: { borderColor: '#1a1a1a' },\n                legend: { show: true, position: 'top', fontSize: '10px', labels: { colors: '#888' } }\n            };\n            this.charts.history = new ApexCharts(document.querySelector(\"#chartHistory_\" + this.machineId), histCfg);\n            Object.values(this.charts).forEach(c => c && c.render());\n        }\n    },\n    mounted() {\n        if (window.ApexCharts) { this.init(); }\n        else {\n            const s = document.createElement(\"script\");\n            s.src = \"https://cdn.jsdelivr.net/npm/apexcharts\";\n            s.onload = () => this.init();\n            document.head.appendChild(s);\n        }\n    }\n}\n</script>\n\n<style>\n    .industrial-dashboard {\n        background: #0a0a0b;\n        color: #d1d1d1;\n        padding: 12px; /* Margins réduits */\n        border-radius: 4px;\n        font-family: 'Courier New', monospace;\n    }\n\n    .panel {\n        background: #111113;\n        border: 1px solid #222;\n        margin-bottom: 12px; /* Espacement hauteur réduit */\n        box-shadow: inset 0 0 15px rgba(0,0,0,0.5);\n        padding: 12px;\n    }\n\n    .panel-header {\n        font-size: 0.55rem;\n        color: #444;\n        letter-spacing: 2px;\n        margin-bottom: 8px;\n        border-bottom: 1px solid #1a1a1a;\n        padding-bottom: 4px;\n    }\n\n    .header-panel {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        border-left: 3px solid #00E396;\n    }\n\n    .value.active {\n        color: #00E396;\n        font-weight: bold;\n        text-shadow: 0 0 5px rgba(0,227,150,0.3);\n        font-size: 0.75rem;\n    }\n\n    .global-status-text {\n        font-size: 0.5rem;\n        color: #888;\n        max-width: 130px;\n        text-align: right;\n    }\n\n    .status-led { width: 7px; height: 7px; background: #00E396; border-radius: 50%; }\n\n    .dashboard-grid {\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 12px;\n    }\n\n    .gauge-section { grid-column: 1 / -1; }\n\n    .gauge-grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 10px;\n    }\n\n    .gauge-wrapper { \n        text-align: center; \n        background: radial-gradient(circle, #161618 0%, #111113 100%); \n        border-radius: 6px; \n        padding: 5px 0 10px 0;\n    }\n\n    /* Label sorti de la jauge et placé en bas */\n    .gauge-info {\n        font-size: 0.5rem;\n        color: #555;\n        font-weight: bold;\n        margin-top: 2px;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n    }\n\n    .trend-section { grid-column: 1 / -1; }\n\n    /* PSR RETRO LCD SCREENS */\n    .alerts-row {\n        grid-column: 1 / -1;\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 12px;\n    }\n\n    .psr-lcd {\n        height: 60px; /* Plus compact */\n        position: relative;\n        background: #1a0d00;\n        border: 3px solid #222;\n        border-radius: 4px;\n        overflow: hidden;\n    }\n\n    .lcd-scanlines {\n        position: absolute;\n        top: 0; left: 0; width: 100%; height: 100%;\n        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);\n        background-size: 100% 2px;\n        z-index: 2;\n        pointer-events: none;\n    }\n\n    .lcd-content {\n        display: flex;\n        align-items: center;\n        padding: 8px;\n        color: rgba(255, 120, 0, 0.2);\n    }\n\n    .lcd-icon { font-size: 1.2rem; margin-right: 12px; opacity: 0.2; }\n    .lcd-title { font-size: 0.45rem; letter-spacing: 1px; }\n    .lcd-val { font-size: 0.7rem; font-weight: bold; }\n\n    .psr-lcd.active { background: #ff8800; border-color: #ffaa44; box-shadow: 0 0 15px rgba(255, 136, 0, 0.3); }\n    .psr-lcd.active .lcd-content { color: #221100; }\n    .psr-lcd.active .lcd-icon { opacity: 1; animation: vibrate 0.1s infinite; }\n\n    @keyframes vibrate { 0% { transform: translate(0); } 50% { transform: translate(1px, 0.5px); } 100% { transform: translate(0); } }\n    .apexcharts-canvas { margin: 0 auto; }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f378425a70b9820f",
+        "type": "ui-template",
+        "z": "73a689065fe1bb03",
+        "group": "8b4c8c22c2e85016",
+        "page": "",
+        "ui": "",
+        "name": "Temperax",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div class=\"industrial-dashboard\">\n        <div class=\"panel header-panel\">\n            <div class=\"machine-info\">\n                <div class=\"glitch-box\">\n                    <span class=\"value active\">MACHINE_{{ machineId }}</span>\n                </div>\n            </div>\n            <div class=\"global-status-container\">\n                <div class=\"status-led\" :class=\"{ 'led-alert': alerts !== 'OK' }\"></div>\n                <div class=\"global-status-text\">{{ alerts }}</div>\n            </div>\n        </div>\n\n        <div class=\"dashboard-grid\">\n            <div class=\"panel gauge-section\">\n                <div class=\"panel-header\">TÉLÉMÉTRIE TEMPS RÉEL</div>\n                <div class=\"gauge-grid\">\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartTemp_' + machineId\"></div>\n                        <div class=\"gauge-info\">TEMPÉRATURE</div>\n                    </div>\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartHum_' + machineId\"></div>\n                        <div class=\"gauge-info\">HUMIDITÉ</div>\n                    </div>\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartVib_' + machineId\"></div>\n                        <div class=\"gauge-info\">VIBRATION</div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"panel trend-section\">\n                <div class=\"panel-header\">ANALYSE DES TENDANCES (30 PTS)</div>\n                <div :id=\"'chartHistory_' + machineId\"></div>\n            </div>\n\n            <div class=\"alerts-row\">\n                <div class=\"psr-lcd fire\" :class=\"{ active: flamme }\">\n                    <div class=\"lcd-scanlines\"></div>\n                    <div class=\"lcd-content\">\n                        <div class=\"lcd-icon\">🔥</div>\n                        <div class=\"lcd-text\">\n                            <span class=\"lcd-title\">FLAME SENSOR</span>\n                            <span class=\"lcd-val\">{{ flamme ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"psr-lcd smoke\" :class=\"{ active: fumee }\">\n                    <div class=\"lcd-scanlines\"></div>\n                    <div class=\"lcd-content\">\n                        <div class=\"lcd-icon\">💨</div>\n                        <div class=\"lcd-text\">\n                            <span class=\"lcd-title\">SMOKE SENSOR</span>\n                            <span class=\"lcd-val\">{{ fumee ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script>\nexport default {\n    data() {\n        return {\n            machineId: \"2\",\n            colors: { temp: '#FEB019', hum: '#00E396', vib: '#FF4560' },\n            charts: { temp: null, hum: null, vib: null, history: null },\n            temperature: 0, humidity: 0, vibration: 0,\n            flamme: false, fumee: false, alerts: \"OK\",\n            historyData: { temp: [], hum: [], vib: [], times: [] },\n            MAX_POINTS: 30\n        }\n    },\n    watch: {\n        msg: function(m) {\n            if (!m || String(m.machine) !== String(this.machineId)) return;\n            \n            this.temperature = parseFloat(m.temperature) || 0;\n            this.humidity = parseFloat(m.humidity) || 0;\n            this.vibration = parseFloat(m.vibration) || 0;\n            this.flamme = !!m.flamme;\n            this.fumee = !!m.fumee;\n            this.alerts = m.alerts || \"OK\";\n\n            this.syncUI();\n        }\n    },\n    methods: {\n        syncUI() {\n            // Conversion en pourcentage pour le remplissage visuel de la jauge\n            // (Valeur / Max) * 100\n            if (this.charts.temp) this.charts.temp.updateSeries([(this.temperature / 50) * 100]);\n            if (this.charts.hum) this.charts.hum.updateSeries([this.humidity]);\n            if (this.charts.vib) this.charts.vib.updateSeries([(this.vibration / 10) * 100]);\n            \n            const now = new Date().toLocaleTimeString();\n            this.historyData.temp.push(this.temperature);\n            this.historyData.hum.push(this.humidity);\n            this.historyData.vib.push(this.vibration);\n            this.historyData.times.push(now);\n\n            if (this.historyData.temp.length > this.MAX_POINTS) {\n                this.historyData.temp.shift(); this.historyData.hum.shift();\n                this.historyData.vib.shift(); this.historyData.times.shift();\n            }\n\n            if (this.charts.history) {\n                this.charts.history.updateSeries([\n                    { name: 'Temp', data: this.historyData.temp },\n                    { name: 'Humid', data: this.historyData.hum },\n                    { name: 'Vibra', data: this.historyData.vib }\n                ]);\n            }\n        },\n        getGaugeConfig(color, max, unit) {\n            return {\n                chart: { type: 'radialBar', height: 180, sparkline: { enabled: true } },\n                series: [0],\n                colors: [color],\n                plotOptions: {\n                    radialBar: {\n                        startAngle: -110, endAngle: 110,\n                        hollow: { size: '60%' },\n                        track: { background: '#1a1a1a', strokeWidth: '95%' },\n                        dataLabels: {\n                            name: { show: false },\n                            value: { \n                                offsetY: 5, \n                                fontSize: '14px', \n                                fontWeight: 'bold', \n                                color: '#fff', \n                                // Calcul pour ré-afficher la valeur exacte à partir du pourcentage\n                                formatter: (v) => ((v / 100) * max).toFixed(1) + unit \n                            }\n                        }\n                    }\n                },\n                stroke: { lineCap: 'butt', dashArray: 2 }\n            };\n        },\n        init() {\n            this.charts.temp = new ApexCharts(document.querySelector(\"#chartTemp_\" + this.machineId), this.getGaugeConfig(this.colors.temp, 50, '°'));\n            this.charts.hum = new ApexCharts(document.querySelector(\"#chartHum_\" + this.machineId), this.getGaugeConfig(this.colors.hum, 100, '%'));\n            this.charts.vib = new ApexCharts(document.querySelector(\"#chartVib_\" + this.machineId), this.getGaugeConfig(this.colors.vib, 10, ''));\n\n            const histCfg = {\n                chart: { type: 'area', height: 140, toolbar: { show: false }, animations: { enabled: false } },\n                colors: [this.colors.temp, this.colors.hum, this.colors.vib],\n                dataLabels: { enabled: false },\n                stroke: { curve: 'smooth', width: 2 },\n                fill: { type: 'gradient', gradient: { opacityFrom: 0.3, opacityTo: 0 } },\n                series: [{ name: 'T°', data: [] }, { name: 'H%', data: [] }, { name: 'Vib', data: [] }],\n                xaxis: { labels: { show: false }, axisBorder: { show: false } },\n                yaxis: { labels: { show: false } },\n                grid: { borderColor: '#1a1a1a' },\n                legend: { show: true, position: 'top', fontSize: '10px', labels: { colors: '#888' } }\n            };\n            this.charts.history = new ApexCharts(document.querySelector(\"#chartHistory_\" + this.machineId), histCfg);\n            Object.values(this.charts).forEach(c => c && c.render());\n        }\n    },\n    mounted() {\n        if (window.ApexCharts) { this.init(); }\n        else {\n            const s = document.createElement(\"script\");\n            s.src = \"https://cdn.jsdelivr.net/npm/apexcharts\";\n            s.onload = () => this.init();\n            document.head.appendChild(s);\n        }\n    }\n}\n</script>\n\n<style>\n    .industrial-dashboard {\n        background: #0a0a0b;\n        color: #d1d1d1;\n        padding: 12px; /* Margins réduits */\n        border-radius: 4px;\n        font-family: 'Courier New', monospace;\n    }\n\n    .panel {\n        background: #111113;\n        border: 1px solid #222;\n        margin-bottom: 12px; /* Espacement hauteur réduit */\n        box-shadow: inset 0 0 15px rgba(0,0,0,0.5);\n        padding: 12px;\n    }\n\n    .panel-header {\n        font-size: 0.55rem;\n        color: #444;\n        letter-spacing: 2px;\n        margin-bottom: 8px;\n        border-bottom: 1px solid #1a1a1a;\n        padding-bottom: 4px;\n    }\n\n    .header-panel {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        border-left: 3px solid #00E396;\n    }\n\n    .value.active {\n        color: #00E396;\n        font-weight: bold;\n        text-shadow: 0 0 5px rgba(0,227,150,0.3);\n        font-size: 0.75rem;\n    }\n\n    .global-status-text {\n        font-size: 0.5rem;\n        color: #888;\n        max-width: 130px;\n        text-align: right;\n    }\n\n    .status-led { width: 7px; height: 7px; background: #00E396; border-radius: 50%; }\n\n    .dashboard-grid {\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 12px;\n    }\n\n    .gauge-section { grid-column: 1 / -1; }\n\n    .gauge-grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 10px;\n    }\n\n    .gauge-wrapper { \n        text-align: center; \n        background: radial-gradient(circle, #161618 0%, #111113 100%); \n        border-radius: 6px; \n        padding: 5px 0 10px 0;\n    }\n\n    /* Label sorti de la jauge et placé en bas */\n    .gauge-info {\n        font-size: 0.5rem;\n        color: #555;\n        font-weight: bold;\n        margin-top: 2px;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n    }\n\n    .trend-section { grid-column: 1 / -1; }\n\n    /* PSR RETRO LCD SCREENS */\n    .alerts-row {\n        grid-column: 1 / -1;\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 12px;\n    }\n\n    .psr-lcd {\n        height: 60px; /* Plus compact */\n        position: relative;\n        background: #1a0d00;\n        border: 3px solid #222;\n        border-radius: 4px;\n        overflow: hidden;\n    }\n\n    .lcd-scanlines {\n        position: absolute;\n        top: 0; left: 0; width: 100%; height: 100%;\n        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);\n        background-size: 100% 2px;\n        z-index: 2;\n        pointer-events: none;\n    }\n\n    .lcd-content {\n        display: flex;\n        align-items: center;\n        padding: 8px;\n        color: rgba(255, 120, 0, 0.2);\n    }\n\n    .lcd-icon { font-size: 1.2rem; margin-right: 12px; opacity: 0.2; }\n    .lcd-title { font-size: 0.45rem; letter-spacing: 1px; }\n    .lcd-val { font-size: 0.7rem; font-weight: bold; }\n\n    .psr-lcd.active { background: #ff8800; border-color: #ffaa44; box-shadow: 0 0 15px rgba(255, 136, 0, 0.3); }\n    .psr-lcd.active .lcd-content { color: #221100; }\n    .psr-lcd.active .lcd-icon { opacity: 1; animation: vibrate 0.1s infinite; }\n\n    @keyframes vibrate { 0% { transform: translate(0); } 50% { transform: translate(1px, 0.5px); } 100% { transform: translate(0); } }\n    .apexcharts-canvas { margin: 0 auto; }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cabafe0639c0a896",
+        "type": "ui-template",
+        "z": "73a689065fe1bb03",
+        "group": "01d42437558733e1",
+        "page": "",
+        "ui": "",
+        "name": "Temperax",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div class=\"industrial-dashboard\">\n        <div class=\"panel header-panel\">\n            <div class=\"machine-info\">\n                <div class=\"glitch-box\">\n                    <span class=\"value active\">MACHINE_{{ machineId }}</span>\n                </div>\n            </div>\n            <div class=\"global-status-container\">\n                <div class=\"status-led\" :class=\"{ 'led-alert': alerts !== 'OK' }\"></div>\n                <div class=\"global-status-text\">{{ alerts }}</div>\n            </div>\n        </div>\n\n        <div class=\"dashboard-grid\">\n            <div class=\"panel gauge-section\">\n                <div class=\"panel-header\">TÉLÉMÉTRIE TEMPS RÉEL</div>\n                <div class=\"gauge-grid\">\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartTemp_' + machineId\"></div>\n                        <div class=\"gauge-info\">TEMPÉRATURE</div>\n                    </div>\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartHum_' + machineId\"></div>\n                        <div class=\"gauge-info\">HUMIDITÉ</div>\n                    </div>\n                    <div class=\"gauge-wrapper\">\n                        <div :id=\"'chartVib_' + machineId\"></div>\n                        <div class=\"gauge-info\">VIBRATION</div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"panel trend-section\">\n                <div class=\"panel-header\">ANALYSE DES TENDANCES (30 PTS)</div>\n                <div :id=\"'chartHistory_' + machineId\"></div>\n            </div>\n\n            <div class=\"alerts-row\">\n                <div class=\"psr-lcd fire\" :class=\"{ active: flamme }\">\n                    <div class=\"lcd-scanlines\"></div>\n                    <div class=\"lcd-content\">\n                        <div class=\"lcd-icon\">🔥</div>\n                        <div class=\"lcd-text\">\n                            <span class=\"lcd-title\">FLAME SENSOR</span>\n                            <span class=\"lcd-val\">{{ flamme ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"psr-lcd smoke\" :class=\"{ active: fumee }\">\n                    <div class=\"lcd-scanlines\"></div>\n                    <div class=\"lcd-content\">\n                        <div class=\"lcd-icon\">💨</div>\n                        <div class=\"lcd-text\">\n                            <span class=\"lcd-title\">SMOKE SENSOR</span>\n                            <span class=\"lcd-val\">{{ fumee ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script>\n    export default {\n    data() {\n        return {\n            machineId: \"3\",\n            colors: { temp: '#FEB019', hum: '#00E396', vib: '#FF4560' },\n            charts: { temp: null, hum: null, vib: null, history: null },\n            temperature: 0, humidity: 0, vibration: 0,\n            flamme: false, fumee: false, alerts: \"OK\",\n            historyData: { temp: [], hum: [], vib: [], times: [] },\n            MAX_POINTS: 30\n        }\n    },\n    watch: {\n        msg: function(m) {\n            if (!m || String(m.machine) !== String(this.machineId)) return;\n            \n            this.temperature = parseFloat(m.temperature) || 0;\n            this.humidity = parseFloat(m.humidity) || 0;\n            this.vibration = parseFloat(m.vibration) || 0;\n            this.flamme = !!m.flamme;\n            this.fumee = !!m.fumee;\n            this.alerts = m.alerts || \"OK\";\n\n            this.syncUI();\n        }\n    },\n    methods: {\n        syncUI() {\n            // Conversion en pourcentage pour le remplissage visuel de la jauge\n            // (Valeur / Max) * 100\n            if (this.charts.temp) this.charts.temp.updateSeries([(this.temperature / 50) * 100]);\n            if (this.charts.hum) this.charts.hum.updateSeries([this.humidity]);\n            if (this.charts.vib) this.charts.vib.updateSeries([(this.vibration / 10) * 100]);\n            \n            const now = new Date().toLocaleTimeString();\n            this.historyData.temp.push(this.temperature);\n            this.historyData.hum.push(this.humidity);\n            this.historyData.vib.push(this.vibration);\n            this.historyData.times.push(now);\n\n            if (this.historyData.temp.length > this.MAX_POINTS) {\n                this.historyData.temp.shift(); this.historyData.hum.shift();\n                this.historyData.vib.shift(); this.historyData.times.shift();\n            }\n\n            if (this.charts.history) {\n                this.charts.history.updateSeries([\n                    { name: 'Temp', data: this.historyData.temp },\n                    { name: 'Humid', data: this.historyData.hum },\n                    { name: 'Vibra', data: this.historyData.vib }\n                ]);\n            }\n        },\n        getGaugeConfig(color, max, unit) {\n            return {\n                chart: { type: 'radialBar', height: 180, sparkline: { enabled: true } },\n                series: [0],\n                colors: [color],\n                plotOptions: {\n                    radialBar: {\n                        startAngle: -110, endAngle: 110,\n                        hollow: { size: '60%' },\n                        track: { background: '#1a1a1a', strokeWidth: '95%' },\n                        dataLabels: {\n                            name: { show: false },\n                            value: { \n                                offsetY: 5, \n                                fontSize: '14px', \n                                fontWeight: 'bold', \n                                color: '#fff', \n                                // Calcul pour ré-afficher la valeur exacte à partir du pourcentage\n                                formatter: (v) => ((v / 100) * max).toFixed(1) + unit \n                            }\n                        }\n                    }\n                },\n                stroke: { lineCap: 'butt', dashArray: 2 }\n            };\n        },\n        init() {\n            this.charts.temp = new ApexCharts(document.querySelector(\"#chartTemp_\" + this.machineId), this.getGaugeConfig(this.colors.temp, 50, '°'));\n            this.charts.hum = new ApexCharts(document.querySelector(\"#chartHum_\" + this.machineId), this.getGaugeConfig(this.colors.hum, 100, '%'));\n            this.charts.vib = new ApexCharts(document.querySelector(\"#chartVib_\" + this.machineId), this.getGaugeConfig(this.colors.vib, 10, ''));\n\n            const histCfg = {\n                chart: { type: 'area', height: 140, toolbar: { show: false }, animations: { enabled: false } },\n                colors: [this.colors.temp, this.colors.hum, this.colors.vib],\n                dataLabels: { enabled: false },\n                stroke: { curve: 'smooth', width: 2 },\n                fill: { type: 'gradient', gradient: { opacityFrom: 0.3, opacityTo: 0 } },\n                series: [{ name: 'T°', data: [] }, { name: 'H%', data: [] }, { name: 'Vib', data: [] }],\n                xaxis: { labels: { show: false }, axisBorder: { show: false } },\n                yaxis: { labels: { show: false } },\n                grid: { borderColor: '#1a1a1a' },\n                legend: { show: true, position: 'top', fontSize: '10px', labels: { colors: '#888' } }\n            };\n            this.charts.history = new ApexCharts(document.querySelector(\"#chartHistory_\" + this.machineId), histCfg);\n            Object.values(this.charts).forEach(c => c && c.render());\n        }\n    },\n    mounted() {\n        if (window.ApexCharts) { this.init(); }\n        else {\n            const s = document.createElement(\"script\");\n            s.src = \"https://cdn.jsdelivr.net/npm/apexcharts\";\n            s.onload = () => this.init();\n            document.head.appendChild(s);\n        }\n    }\n}\n</script>\n\n<style>\n    .industrial-dashboard {\n        background: #0a0a0b;\n        color: #d1d1d1;\n        padding: 12px;\n        /* Margins réduits */\n        border-radius: 4px;\n        font-family: 'Courier New', monospace;\n    }\n\n    .panel {\n        background: #111113;\n        border: 1px solid #222;\n        margin-bottom: 12px;\n        /* Espacement hauteur réduit */\n        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);\n        padding: 12px;\n    }\n\n    .panel-header {\n        font-size: 0.55rem;\n        color: #444;\n        letter-spacing: 2px;\n        margin-bottom: 8px;\n        border-bottom: 1px solid #1a1a1a;\n        padding-bottom: 4px;\n    }\n\n    .header-panel {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        border-left: 3px solid #00E396;\n    }\n\n    .value.active {\n        color: #00E396;\n        font-weight: bold;\n        text-shadow: 0 0 5px rgba(0, 227, 150, 0.3);\n        font-size: 0.75rem;\n    }\n\n    .global-status-text {\n        font-size: 0.5rem;\n        color: #888;\n        max-width: 130px;\n        text-align: right;\n    }\n\n    .status-led {\n        width: 7px;\n        height: 7px;\n        background: #00E396;\n        border-radius: 50%;\n    }\n\n    .dashboard-grid {\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 12px;\n    }\n\n    .gauge-section {\n        grid-column: 1 / -1;\n    }\n\n    .gauge-grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 10px;\n    }\n\n    .gauge-wrapper {\n        text-align: center;\n        background: radial-gradient(circle, #161618 0%, #111113 100%);\n        border-radius: 6px;\n        padding: 5px 0 10px 0;\n    }\n\n    /* Label sorti de la jauge et placé en bas */\n    .gauge-info {\n        font-size: 0.5rem;\n        color: #555;\n        font-weight: bold;\n        margin-top: 2px;\n        text-transform: uppercase;\n        letter-spacing: 1px;\n    }\n\n    .trend-section {\n        grid-column: 1 / -1;\n    }\n\n    /* PSR RETRO LCD SCREENS */\n    .alerts-row {\n        grid-column: 1 / -1;\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 12px;\n    }\n\n    .psr-lcd {\n        height: 60px;\n        /* Plus compact */\n        position: relative;\n        background: #1a0d00;\n        border: 3px solid #222;\n        border-radius: 4px;\n        overflow: hidden;\n    }\n\n    .lcd-scanlines {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);\n        background-size: 100% 2px;\n        z-index: 2;\n        pointer-events: none;\n    }\n\n    .lcd-content {\n        display: flex;\n        align-items: center;\n        padding: 8px;\n        color: rgba(255, 120, 0, 0.2);\n    }\n\n    .lcd-icon {\n        font-size: 1.2rem;\n        margin-right: 12px;\n        opacity: 0.2;\n    }\n\n    .lcd-title {\n        font-size: 0.45rem;\n        letter-spacing: 1px;\n    }\n\n    .lcd-val {\n        font-size: 0.7rem;\n        font-weight: bold;\n    }\n\n    .psr-lcd.active {\n        background: #ff8800;\n        border-color: #ffaa44;\n        box-shadow: 0 0 15px rgba(255, 136, 0, 0.3);\n    }\n\n    .psr-lcd.active .lcd-content {\n        color: #221100;\n    }\n\n    .psr-lcd.active .lcd-icon {\n        opacity: 1;\n        animation: vibrate 0.1s infinite;\n    }\n\n    @keyframes vibrate {\n        0% {\n            transform: translate(0);\n        }\n\n        50% {\n            transform: translate(1px, 0.5px);\n        }\n\n        100% {\n            transform: translate(0);\n        }\n    }\n\n    .apexcharts-canvas {\n        margin: 0 auto;\n    }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2481edb7b760af39",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]

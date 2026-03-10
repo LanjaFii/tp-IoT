@@ -1,0 +1,304 @@
+<template>
+    <div class="industrial-dashboard">
+        <div class="panel header-panel">
+            <div class="machine-info">
+                <div class="glitch-box">
+                    <span class="value active">MACHINE_{{ machineId }}</span>
+                </div>
+            </div>
+            <div class="global-status-container">
+                <div class="status-led" :class="{ 'led-alert': alerts !== 'OK' }"></div>
+                <div class="global-status-text">{{ alerts }}</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="panel gauge-section">
+                <div class="panel-header">TÉLÉMÉTRIE TEMPS RÉEL</div>
+                <div class="gauge-grid">
+                    <div class="gauge-wrapper">
+                        <div :id="'chartTemp_' + machineId"></div>
+                        <div class="gauge-info">TEMPÉRATURE</div>
+                    </div>
+                    <div class="gauge-wrapper">
+                        <div :id="'chartHum_' + machineId"></div>
+                        <div class="gauge-info">HUMIDITÉ</div>
+                    </div>
+                    <div class="gauge-wrapper">
+                        <div :id="'chartVib_' + machineId"></div>
+                        <div class="gauge-info">VIBRATION</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel trend-section">
+                <div class="panel-header">ANALYSE DES TENDANCES (30 PTS)</div>
+                <div :id="'chartHistory_' + machineId"></div>
+            </div>
+
+            <div class="alerts-row">
+                <div class="psr-lcd fire" :class="{ active: flamme }">
+                    <div class="lcd-scanlines"></div>
+                    <div class="lcd-content">
+                        <div class="lcd-icon">🔥</div>
+                        <div class="lcd-text">
+                            <span class="lcd-title">FLAME SENSOR</span>
+                            <span class="lcd-val">{{ flamme ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="psr-lcd smoke" :class="{ active: fumee }">
+                    <div class="lcd-scanlines"></div>
+                    <div class="lcd-content">
+                        <div class="lcd-icon">💨</div>
+                        <div class="lcd-text">
+                            <span class="lcd-title">SMOKE SENSOR</span>
+                            <span class="lcd-val">{{ fumee ? '!!! DANGER !!!' : 'SYSTEM READY' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            machineId: "1",
+            colors: { temp: '#FEB019', hum: '#00E396', vib: '#FF4560' },
+            charts: { temp: null, hum: null, vib: null, history: null },
+            temperature: 0, humidity: 0, vibration: 0,
+            flamme: false, fumee: false, alerts: "OK",
+            historyData: { temp: [], hum: [], vib: [], times: [] },
+            MAX_POINTS: 30
+        }
+    },
+    watch: {
+        msg: function(m) {
+            if (!m || String(m.machine) !== String(this.machineId)) return;
+            
+            this.temperature = parseFloat(m.temperature) || 0;
+            this.humidity = parseFloat(m.humidity) || 0;
+            this.vibration = parseFloat(m.vibration) || 0;
+            this.flamme = !!m.flamme;
+            this.fumee = !!m.fumee;
+            this.alerts = m.alerts || "OK";
+
+            this.syncUI();
+        }
+    },
+    methods: {
+        syncUI() {
+            // Conversion en pourcentage pour le remplissage visuel de la jauge
+            // (Valeur / Max) * 100
+            if (this.charts.temp) this.charts.temp.updateSeries([(this.temperature / 50) * 100]);
+            if (this.charts.hum) this.charts.hum.updateSeries([this.humidity]);
+            if (this.charts.vib) this.charts.vib.updateSeries([(this.vibration / 10) * 100]);
+            
+            const now = new Date().toLocaleTimeString();
+            this.historyData.temp.push(this.temperature);
+            this.historyData.hum.push(this.humidity);
+            this.historyData.vib.push(this.vibration);
+            this.historyData.times.push(now);
+
+            if (this.historyData.temp.length > this.MAX_POINTS) {
+                this.historyData.temp.shift(); this.historyData.hum.shift();
+                this.historyData.vib.shift(); this.historyData.times.shift();
+            }
+
+            if (this.charts.history) {
+                this.charts.history.updateSeries([
+                    { name: 'Temp', data: this.historyData.temp },
+                    { name: 'Humid', data: this.historyData.hum },
+                    { name: 'Vibra', data: this.historyData.vib }
+                ]);
+            }
+        },
+        getGaugeConfig(color, max, unit) {
+            return {
+                chart: { type: 'radialBar', height: 180, sparkline: { enabled: true } },
+                series: [0],
+                colors: [color],
+                plotOptions: {
+                    radialBar: {
+                        startAngle: -110, endAngle: 110,
+                        hollow: { size: '60%' },
+                        track: { background: '#1a1a1a', strokeWidth: '95%' },
+                        dataLabels: {
+                            name: { show: false },
+                            value: { 
+                                offsetY: 5, 
+                                fontSize: '14px', 
+                                fontWeight: 'bold', 
+                                color: '#fff', 
+                                // Calcul pour ré-afficher la valeur exacte à partir du pourcentage
+                                formatter: (v) => ((v / 100) * max).toFixed(1) + unit 
+                            }
+                        }
+                    }
+                },
+                stroke: { lineCap: 'butt', dashArray: 2 }
+            };
+        },
+        init() {
+            this.charts.temp = new ApexCharts(document.querySelector("#chartTemp_" + this.machineId), this.getGaugeConfig(this.colors.temp, 50, '°'));
+            this.charts.hum = new ApexCharts(document.querySelector("#chartHum_" + this.machineId), this.getGaugeConfig(this.colors.hum, 100, '%'));
+            this.charts.vib = new ApexCharts(document.querySelector("#chartVib_" + this.machineId), this.getGaugeConfig(this.colors.vib, 10, ''));
+
+            const histCfg = {
+                chart: { type: 'area', height: 140, toolbar: { show: false }, animations: { enabled: false } },
+                colors: [this.colors.temp, this.colors.hum, this.colors.vib],
+                dataLabels: { enabled: false },
+                stroke: { curve: 'smooth', width: 2 },
+                fill: { type: 'gradient', gradient: { opacityFrom: 0.3, opacityTo: 0 } },
+                series: [{ name: 'T°', data: [] }, { name: 'H%', data: [] }, { name: 'Vib', data: [] }],
+                xaxis: { labels: { show: false }, axisBorder: { show: false } },
+                yaxis: { labels: { show: false } },
+                grid: { borderColor: '#1a1a1a' },
+                legend: { show: true, position: 'top', fontSize: '10px', labels: { colors: '#888' } }
+            };
+            this.charts.history = new ApexCharts(document.querySelector("#chartHistory_" + this.machineId), histCfg);
+            Object.values(this.charts).forEach(c => c && c.render());
+        }
+    },
+    mounted() {
+        if (window.ApexCharts) { this.init(); }
+        else {
+            const s = document.createElement("script");
+            s.src = "https://cdn.jsdelivr.net/npm/apexcharts";
+            s.onload = () => this.init();
+            document.head.appendChild(s);
+        }
+    }
+}
+</script>
+
+<style>
+    .industrial-dashboard {
+        background: #0a0a0b;
+        color: #d1d1d1;
+        padding: 12px; /* Margins réduits */
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+    }
+
+    .panel {
+        background: #111113;
+        border: 1px solid #222;
+        margin-bottom: 12px; /* Espacement hauteur réduit */
+        box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+        padding: 12px;
+    }
+
+    .panel-header {
+        font-size: 0.55rem;
+        color: #444;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 4px;
+    }
+
+    .header-panel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 3px solid #00E396;
+    }
+
+    .value.active {
+        color: #00E396;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(0,227,150,0.3);
+        font-size: 0.75rem;
+    }
+
+    .global-status-text {
+        font-size: 0.5rem;
+        color: #888;
+        max-width: 130px;
+        text-align: right;
+    }
+
+    .status-led { width: 7px; height: 7px; background: #00E396; border-radius: 50%; }
+
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .gauge-section { grid-column: 1 / -1; }
+
+    .gauge-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .gauge-wrapper { 
+        text-align: center; 
+        background: radial-gradient(circle, #161618 0%, #111113 100%); 
+        border-radius: 6px; 
+        padding: 5px 0 10px 0;
+    }
+
+    /* Label sorti de la jauge et placé en bas */
+    .gauge-info {
+        font-size: 0.5rem;
+        color: #555;
+        font-weight: bold;
+        margin-top: 2px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .trend-section { grid-column: 1 / -1; }
+
+    /* PSR RETRO LCD SCREENS */
+    .alerts-row {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .psr-lcd {
+        height: 60px; /* Plus compact */
+        position: relative;
+        background: #1a0d00;
+        border: 3px solid #222;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .lcd-scanlines {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+        background-size: 100% 2px;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .lcd-content {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        color: rgba(255, 120, 0, 0.2);
+    }
+
+    .lcd-icon { font-size: 1.2rem; margin-right: 12px; opacity: 0.2; }
+    .lcd-title { font-size: 0.45rem; letter-spacing: 1px; }
+    .lcd-val { font-size: 0.7rem; font-weight: bold; }
+
+    .psr-lcd.active { background: #ff8800; border-color: #ffaa44; box-shadow: 0 0 15px rgba(255, 136, 0, 0.3); }
+    .psr-lcd.active .lcd-content { color: #221100; }
+    .psr-lcd.active .lcd-icon { opacity: 1; animation: vibrate 0.1s infinite; }
+
+    @keyframes vibrate { 0% { transform: translate(0); } 50% { transform: translate(1px, 0.5px); } 100% { transform: translate(0); } }
+    .apexcharts-canvas { margin: 0 auto; }
+</style>
