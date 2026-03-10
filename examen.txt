@@ -1,0 +1,7 @@
+Une usine souhaite mettre en place un systeme IoT pour surveiller ses machines critiques, les parametres mesures sont (temperature, humidite, vibration, flemme, fummée)
+Objectif collecter et traiter les données en temps réel
+
+Generer des alertes en cas de depassement de surveiller
+
+Visualiser les données sur un dashboard 
+Stocker les mesurer pour analyse ultérieur
